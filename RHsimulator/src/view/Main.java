@@ -20,13 +20,13 @@ public class Main {
 
 		do {
 			System.out.println("--------- Menu ---------");
-			System.out.println("1 - Cadastro de funcionários.");
-			System.out.println("2 - Pesquisar funcionários.");
-			System.out.println("3 - Listar funcionários.");
+			System.out.println("1 - Cadastro de funcionÃ¡rios.");
+			System.out.println("2 - Pesquisar funcionÃ¡rios.");
+			System.out.println("3 - Listar funcionÃ¡rios.");
 			System.out.println("4 - Sair.");
 			System.out.println("");
 
-			System.out.print("Digite uma opção: ");
+			System.out.print("Digite uma opÃ§Ã£o: ");
 			opmenu = leitor.nextInt();
 
 			switch (opmenu) {
@@ -35,7 +35,7 @@ public class Main {
 				break;
 			}
 			case 2: {
-				System.out.println("Digite o nome do funcionário a ser pesquisado: ");
+				System.out.println("Digite o nome do funcionÃ¡rio a ser pesquisado: ");
 				nome = leitor.nextLine();
 				break;
 			}
@@ -44,7 +44,7 @@ public class Main {
 				break;
 			}
 			default:
-				System.out.println(" Opção Inválida, tente novamente.");
+				System.out.println(" OpÃ§Ã£o InvÃ¡lida, tente novamente.");
 			}
 		} while (opmenu != 4);
 	}
