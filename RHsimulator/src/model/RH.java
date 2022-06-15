@@ -31,7 +31,7 @@ public class RH extends Funcionario {
 
 	public void Cadastrar() {
 
-		System.out.print(" Digite o tipo de funcionário a ser cadastrado: ");
+		System.out.print(" Digite o tipo de funcionÃ¡rio a ser cadastrado: ");
 		tipo = leitor.nextLine();
 		System.out.print("");
 
@@ -48,16 +48,16 @@ public class RH extends Funcionario {
 			System.out.print(" Area Vinculada: ");
 			area = leitor.nextLine();
 			d1.setAreaVinculada(area);
-			System.out.print(" Endereço: ");
+			System.out.print(" EndereÃ§o: ");
 			endereco = leitor.nextLine();
 			d1.setEndereco(endereco);
-			System.out.print(" Data de admissão: ");
+			System.out.print(" Data de admissÃ£o: ");
 			data = leitor.nextLine();
 			d1.setData(data);
-			System.out.print(" Titulação: ");
+			System.out.print(" TitulaÃ§Ã£o: ");
 			titulacao = leitor.nextLine();
 			d1.setTitulacao(titulacao);
-			System.out.print(" Salário Base: ");
+			System.out.print(" SalÃ¡rio Base: ");
 			salario = leitor.nextDouble();
 			d1.setSalario(salario);
 			System.out.println("");
@@ -77,16 +77,16 @@ public class RH extends Funcionario {
 			System.out.print("Departamento: ");
 			departamento = leitor.nextLine();
 			t1.setDepartamento(departamento);
-			System.out.print(" Endereço: ");
+			System.out.print(" EndereÃ§o: ");
 			endereco = leitor.nextLine();
 			t1.setEndereco(endereco);
-			System.out.print(" Data de admissão: ");
+			System.out.print(" Data de admissÃ£o: ");
 			data = leitor.nextLine();
 			t1.setData(data);
-			System.out.print(" Titulação: ");
+			System.out.print(" TitulaÃ§Ã£o: ");
 			titulacao = leitor.nextLine();
 			t1.setTitulacao(titulacao);
-			System.out.print(" Salário Base: ");
+			System.out.print(" SalÃ¡rio Base: ");
 			salario = leitor.nextDouble();
 			t1.setSalario(salario);
 			System.out.println("");
@@ -99,22 +99,22 @@ public class RH extends Funcionario {
 			System.out.print(" CPF: ");
 			cpf = leitor.nextLine();
 			t2.setCpf(cpf);
-			System.out.print(" Endereço: ");
+			System.out.print(" EndereÃ§o: ");
 			endereco = leitor.nextLine();
 			t2.setEndereco(endereco);
-			System.out.print("Função: ");
+			System.out.print("FunÃ§Ã£o: ");
 			funcao = leitor.nextLine();
 			t2.setFuncao(funcao);
-			System.out.print(" Data de admissão: ");
+			System.out.print(" Data de admissÃ£o: ");
 			data = leitor.nextLine();
 			t2.setData(data);
 			System.out.print(" Data de fim de contrato: ");
 			dataFim = leitor.nextLine();
 			t2.setDataFim(dataFim);
-			System.out.print(" Titulação: ");
+			System.out.print(" TitulaÃ§Ã£o: ");
 			titulacao = leitor.nextLine();
 			t2.setTitulacao(titulacao);
-			System.out.print(" Salário Base: ");
+			System.out.print(" SalÃ¡rio Base: ");
 			salario = leitor.nextDouble();
 			t2.setSalario(salario);
 			System.out.println("");
@@ -135,33 +135,33 @@ public class RH extends Funcionario {
 				System.out.println(" CPF: " + d1.getCpf());
 				System.out.println(" SIAPE: " + d1.getSiape());
 				System.out.println(" Area Vinculada: " + d1.getAreaVinculada());
-				System.out.println(" Endereço: " + d1.getEndereco());
-				System.out.println(" Data de admissão: " + d1.getData());
-				System.out.println(" Titulação: " + d1.getTitulacao());
-				System.out.println(" Salário Base: " + d1.getSalario());
-				System.out.println(" Salário total: " + d1.calculaSalario(salario));
+				System.out.println(" EndereÃ§o: " + d1.getEndereco());
+				System.out.println(" Data de admissÃ£o: " + d1.getData());
+				System.out.println(" TitulaÃ§Ã£o: " + d1.getTitulacao());
+				System.out.println(" SalÃ¡rio Base: " + d1.getSalario());
+				System.out.println(" SalÃ¡rio total: " + d1.calculaSalario(salario));
 				System.out.println("");
 			} else if (tipo.equals("Tecnico") || tipo.equals("tecnico")) {
 				System.out.println(" Nome: " + t1.getNome());
 				System.out.println(" CPF: " + t1.getCpf());
 				System.out.println(" SIAPE: " + t1.getSiape());
 				System.out.println(" Departamento: " + t1.getDepartamento());
-				System.out.println(" Endereço: " + t1.getEndereco());
-				System.out.println(" Data de admissão: " + t1.getData());
-				System.out.println(" Titulação: " + t1.getTitulacao());
-				System.out.println(" Salário Base: " + t1.getSalario());
-				System.out.println(" Salário total: " + t1.calculaSalario(salario));
+				System.out.println(" EndereÃ§o: " + t1.getEndereco());
+				System.out.println(" Data de admissÃ£o: " + t1.getData());
+				System.out.println(" TitulaÃ§Ã£o: " + t1.getTitulacao());
+				System.out.println(" SalÃ¡rio Base: " + t1.getSalario());
+				System.out.println(" SalÃ¡rio total: " + t1.calculaSalario(salario));
 				System.out.println("");
 			} else if (tipo.equals("Terceiro") || tipo.equals("Terceiro")) {
 				System.out.println(" Nome: " + t2.getNome());
 				System.out.println(" CPF: " + t2.getCpf());
-				System.out.println(" Endereço: " + t2.getEndereco());
-				System.out.println(" Função: " + t2.getFuncao());
-				System.out.println(" Data de admissão: " + t2.getData());
+				System.out.println(" EndereÃ§o: " + t2.getEndereco());
+				System.out.println(" FunÃ§Ã£o: " + t2.getFuncao());
+				System.out.println(" Data de admissÃ£o: " + t2.getData());
 				System.out.println(" Data de fim de contrato: " + t2.getDataFim());
-				System.out.println(" Titulação: " + t2.getTitulacao());
-				System.out.println(" Salário Base: " + t2.getSalario());
-				System.out.println(" Salário total: " + t2.calculaSalario(salario));
+				System.out.println(" TitulaÃ§Ã£o: " + t2.getTitulacao());
+				System.out.println(" SalÃ¡rio Base: " + t2.getSalario());
+				System.out.println(" SalÃ¡rio total: " + t2.calculaSalario(salario));
 				System.out.println("");
 			}
 		}
