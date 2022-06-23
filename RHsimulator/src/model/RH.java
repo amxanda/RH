@@ -2,7 +2,8 @@ package model;
 
 import java.util.*;
 
-public class RH extends Funcionario {
+public class RH {
+	//atributos
 	String nome;
 	String cpf;
 	String endereco;
@@ -15,155 +16,223 @@ public class RH extends Funcionario {
 	String dataFim;
 	String funcao;
 	String tipo;
-	int i;
 
 	Scanner leitor = new Scanner(System.in);
 	ArrayList<Funcionario> cadastro = new ArrayList<>();
 
-	Funcionario f1 = new Funcionario("", "");
-	Docente d1 = new Docente("", "");
-	Tecnico t1 = new Tecnico("", "");
-	Terceiro t2 = new Terceiro("", "");
-
-	public RH(String nome, String cpf) {
-		super(nome, cpf);
+	//setters
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public void Cadastrar() {
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
-		System.out.print(" Digite o tipo de funcionário a ser cadastrado: ");
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public void setTitulacao(String titulacao) {
+		this.titulacao = titulacao;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	public void setSiape(int siape) {
+		this.siape = siape;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public void setDepartamento(String departamento) {
+		this.departamento = departamento;
+	}
+
+	public void setDataFim(String dataFim) {
+		this.dataFim = dataFim;
+	}
+
+	public void setFuncao(String funcao) {
+		this.funcao = funcao;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	//getters
+	public String getNome() {
+		return nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public String getTitulacao() {
+		return titulacao;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public int getSiape() {
+		return siape;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public String getDepartamento() {
+		return departamento;
+	}
+
+	public String getDataFim() {
+		return dataFim;
+	}
+
+	public String getFuncao() {
+		return funcao;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+	
+	//dados docente
+	public Docente docente() {
+		System.out.print("Nome: ");
+		this.nome = leitor.nextLine();
+		System.out.print("CPF: ");
+		this.cpf = leitor.nextLine();
+		System.out.print("Endere�o: ");
+		this.endereco = leitor.nextLine();
+		System.out.print("Data de admiss�o: ");
+		this.data = leitor.nextLine();
+		System.out.print("Titula��o: ");
+		this.titulacao = leitor.nextLine();
+		System.out.print("Sal�rio Base: ");
+		this.salario = leitor.nextDouble();
+		System.out.print("SIAPE: ");
+		this.siape = leitor.nextInt();
+		System.out.print("Area Vinculada: ");
+		this.area = leitor.nextLine();
+
+		System.out.println("");
+
+		Docente d = new Docente(this.nome, this.cpf, this.endereco, this.data, this.titulacao, this.salario, this.siape, this.area);
+		d.calculaSalario();
+		
+		return d;
+	}
+
+	//dados tecnico
+	public Tecnico tecnico() {
+		System.out.print("Nome: ");
+		this.nome = leitor.nextLine();
+		System.out.print("CPF: ");
+		this.cpf = leitor.nextLine();
+		System.out.print("Endere�o: ");
+		this.endereco = leitor.nextLine();
+		System.out.print("Data de admiss�o: ");
+		this.data = leitor.nextLine();
+		System.out.print("Titula��o: ");
+		this.titulacao = leitor.nextLine();
+		System.out.print("Sal�rio Base: ");
+		this.salario = leitor.nextDouble();
+		System.out.print("SIAPE: ");
+		this.siape = leitor.nextInt();
+		System.out.print("Departamento: ");
+		this.departamento = leitor.nextLine();
+
+		System.out.println("");
+		
+		Tecnico t = new Tecnico(this.nome, this.cpf, this.endereco, this.data, this.titulacao, this.salario, this.siape, this.departamento);
+		t.calculaSalario(salario);
+		
+		return t;
+	}
+
+	//dados terceirizados
+	public Terceiro terceiro() {
+		System.out.print("Nome: ");
+		this.nome = leitor.nextLine();
+		System.out.print("CPF: ");
+		this.cpf = leitor.nextLine();
+		System.out.print("Endere�o: ");
+		this.endereco = leitor.nextLine();
+		System.out.print("Data de admiss�o: ");
+		this.data = leitor.nextLine();
+		System.out.print("Titula��o: ");
+		this.titulacao = leitor.nextLine();
+		System.out.print("Sal�rio Base: ");
+		this.salario = leitor.nextDouble();
+		System.out.print("Data de fim de contrato: ");
+		this.dataFim = leitor.nextLine();
+		System.out.print("Fun��o: ");
+		this.funcao = leitor.nextLine();
+
+		System.out.println("");
+
+		Terceiro th = new Terceiro(this.nome, this.cpf, this.endereco, this.data, this.titulacao, this.salario, this.dataFim, this.funcao);
+		th.calculaSalario(salario);
+		
+		return th;
+	}
+
+	//cadastro de funcionarios
+	public void Cadastrar(Funcionario f) {
+		
+		System.out.print("Digite o tipo de funcionario: ");
 		tipo = leitor.nextLine();
-		System.out.print("");
-
-		if (tipo.equals("Docente") || tipo.equals("docente")) {
-			System.out.print(" Nome: ");
-			nome = leitor.nextLine();
-			d1.setNome(nome);
-			System.out.print(" CPF: ");
-			cpf = leitor.nextLine();
-			d1.setCpf(cpf);
-			System.out.print(" SIAPE: ");
-			siape = leitor.nextInt();
-			d1.setSiape(siape);
-			System.out.print(" Area Vinculada: ");
-			area = leitor.nextLine();
-			d1.setAreaVinculada(area);
-			System.out.print(" Endereço: ");
-			endereco = leitor.nextLine();
-			d1.setEndereco(endereco);
-			System.out.print(" Data de admissão: ");
-			data = leitor.nextLine();
-			d1.setData(data);
-			System.out.print(" Titulação: ");
-			titulacao = leitor.nextLine();
-			d1.setTitulacao(titulacao);
-			System.out.print(" Salário Base: ");
-			salario = leitor.nextDouble();
-			d1.setSalario(salario);
-			System.out.println("");
-			
-			cadastro.add(f1);
-			
-		} else if (tipo.equals("Tecnico") || tipo.equals("tecnico")) {
-			System.out.print(" Nome: ");
-			nome = leitor.nextLine();
-			t1.setNome(nome);
-			System.out.print(" CPF: ");
-			cpf = leitor.nextLine();
-			t1.setCpf(cpf);
-			System.out.print(" SIAPE: ");
-			siape = leitor.nextInt();
-			t1.setSiape(siape);
-			System.out.print("Departamento: ");
-			departamento = leitor.nextLine();
-			t1.setDepartamento(departamento);
-			System.out.print(" Endereço: ");
-			endereco = leitor.nextLine();
-			t1.setEndereco(endereco);
-			System.out.print(" Data de admissão: ");
-			data = leitor.nextLine();
-			t1.setData(data);
-			System.out.print(" Titulação: ");
-			titulacao = leitor.nextLine();
-			t1.setTitulacao(titulacao);
-			System.out.print(" Salário Base: ");
-			salario = leitor.nextDouble();
-			t1.setSalario(salario);
-			System.out.println("");
-			
-			cadastro.add(f1);
-		} else if (tipo.equals("Terceiro") || tipo.equals("Terceiro")) {
-			System.out.print(" Nome: ");
-			nome = leitor.nextLine();
-			t2.setNome(nome);
-			System.out.print(" CPF: ");
-			cpf = leitor.nextLine();
-			t2.setCpf(cpf);
-			System.out.print(" Endereço: ");
-			endereco = leitor.nextLine();
-			t2.setEndereco(endereco);
-			System.out.print("Função: ");
-			funcao = leitor.nextLine();
-			t2.setFuncao(funcao);
-			System.out.print(" Data de admissão: ");
-			data = leitor.nextLine();
-			t2.setData(data);
-			System.out.print(" Data de fim de contrato: ");
-			dataFim = leitor.nextLine();
-			t2.setDataFim(dataFim);
-			System.out.print(" Titulação: ");
-			titulacao = leitor.nextLine();
-			t2.setTitulacao(titulacao);
-			System.out.print(" Salário Base: ");
-			salario = leitor.nextDouble();
-			t2.setSalario(salario);
-			System.out.println("");
-			
-			cadastro.add(f1);
+		
+		if (tipo.equalsIgnoreCase("Docente")) {
+			cadastro.add(docente());
+			cadastro.add(f);
+		} else if (tipo.equalsIgnoreCase("Tecnico")) {
+			cadastro.add(tecnico());
+			cadastro.add(f);
+		} else if (tipo.equalsIgnoreCase("Terceiro")) {
+			cadastro.add(terceiro());
+			cadastro.add(f);
 		}
+		
 	}
-
-	public void Pesquisar() {
-
-	}
-
-	public void Mostrar() {
-			
-		for ( Funcionario f1: cadastro ) {
-			if (tipo.equals("Docente") || tipo.equals("docente")) {
-				System.out.println(" Nome: " + d1.getNome());
-				System.out.println(" CPF: " + d1.getCpf());
-				System.out.println(" SIAPE: " + d1.getSiape());
-				System.out.println(" Area Vinculada: " + d1.getAreaVinculada());
-				System.out.println(" Endereço: " + d1.getEndereco());
-				System.out.println(" Data de admissão: " + d1.getData());
-				System.out.println(" Titulação: " + d1.getTitulacao());
-				System.out.println(" Salário Base: " + d1.getSalario());
-				System.out.println(" Salário total: " + d1.calculaSalario(salario));
-				System.out.println("");
-			} else if (tipo.equals("Tecnico") || tipo.equals("tecnico")) {
-				System.out.println(" Nome: " + t1.getNome());
-				System.out.println(" CPF: " + t1.getCpf());
-				System.out.println(" SIAPE: " + t1.getSiape());
-				System.out.println(" Departamento: " + t1.getDepartamento());
-				System.out.println(" Endereço: " + t1.getEndereco());
-				System.out.println(" Data de admissão: " + t1.getData());
-				System.out.println(" Titulação: " + t1.getTitulacao());
-				System.out.println(" Salário Base: " + t1.getSalario());
-				System.out.println(" Salário total: " + t1.calculaSalario(salario));
-				System.out.println("");
-			} else if (tipo.equals("Terceiro") || tipo.equals("Terceiro")) {
-				System.out.println(" Nome: " + t2.getNome());
-				System.out.println(" CPF: " + t2.getCpf());
-				System.out.println(" Endereço: " + t2.getEndereco());
-				System.out.println(" Função: " + t2.getFuncao());
-				System.out.println(" Data de admissão: " + t2.getData());
-				System.out.println(" Data de fim de contrato: " + t2.getDataFim());
-				System.out.println(" Titulação: " + t2.getTitulacao());
-				System.out.println(" Salário Base: " + t2.getSalario());
-				System.out.println(" Salário total: " + t2.calculaSalario(salario));
-				System.out.println("");
+	
+	//pesquisar por funcionarios
+	public ArrayList<Funcionario> Pesquisar(String nome) {
+		System.out.print("Digite o nome do funcion�rio a ser pesquisado: ");
+		nome = leitor.nextLine();
+	
+		for (Funcionario f : cadastro) {
+			if(f.getNome().equalsIgnoreCase(nome)){
+				return cadastro;
 			}
 		}
+		return null;		
 	}
+
+	//mostrar lista de funcionarios cadastrados
+	public ArrayList<Funcionario> Mostrar() {
+		return cadastro;
+	}	
 }

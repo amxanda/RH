@@ -1,13 +1,18 @@
 package model;
 
 public class Terceiro extends Funcionario {
+	//atributos
 	private String dataFim;
 	private String funcao;
 
-	public Terceiro(String nome, String cpf) {
-		super(nome, cpf);
+	//construtor
+	public Terceiro(String nome, String cpf, String endereco, String data, String titulacao, double salario, String dataFim, String funcao ) {
+		super(nome, cpf, endereco, data, titulacao, salario);
+		this.dataFim = dataFim;
+		this.funcao = funcao;
 	}
 
+	//setters
 	public void setDataFim(String dataFim) {
 		this.dataFim = dataFim;
 	}
@@ -16,6 +21,7 @@ public class Terceiro extends Funcionario {
 		this.funcao = funcao;
 	}
 
+	//getters
 	public String getDataFim() {
 		return this.dataFim;
 	}
@@ -24,13 +30,14 @@ public class Terceiro extends Funcionario {
 		return this.funcao;
 	}
 
+	//calculo do salario
 	public double calculaSalario(double salario) {
 		double result = 0;
 
-		if (funcao == "Professor") {
-			if (titulacao.equals("Mestre") || titulacao.equals("mestre")) {
+		if (this.funcao.equalsIgnoreCase("Professor")) {
+			if (this.getTitulacao().equalsIgnoreCase("Mestre")) {
 				result = salario + 500;
-			} else if (titulacao.equals("Doutor") || titulacao.equals("doutor")) {
+			} else if (this.getTitulacao().equalsIgnoreCase("Doutor")) {
 				result = salario + 1000;
 			}
 		}

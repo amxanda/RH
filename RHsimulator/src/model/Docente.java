@@ -1,15 +1,18 @@
 package model;
 
 public class Docente extends Funcionario {
-	// atributos
+	//atributos
 	private int siape;
 	private String areaVinculada;
 
-	public Docente(String nome, String cpf) {
-		super(nome, cpf);
+	//construtor
+	public Docente(String nome, String cpf, String endereco, String data, String titulacao, double salario, int siape, String areaVinculada ) {
+		super(nome, cpf, endereco, data, titulacao, salario);
+		this.siape = siape;
+		this.areaVinculada = areaVinculada;
 	}
 
-	// set
+	//setters
 	public void setSiape(int siape) {
 		this.siape = siape;
 	}
@@ -18,7 +21,7 @@ public class Docente extends Funcionario {
 		this.areaVinculada = area;
 	}
 
-	// get
+	//getters
 	public int getSiape() {
 		return this.siape;
 	}
@@ -27,12 +30,13 @@ public class Docente extends Funcionario {
 		return this.areaVinculada;
 	}
 
+	//calculo do salario
 	public double calculaSalario(double salario) {
 		double result = 0;
-
-		if (titulacao.equals("Mestre") || titulacao.equals("mestre")) {
+		
+		if (this.getTitulacao().equalsIgnoreCase("Mestre")) {
 			result = salario + (salario * 0.20);
-		} else if (titulacao.equals("Doutor") || titulacao.equals("doutor")) {
+		} else if (this.getTitulacao().equalsIgnoreCase("Doutor")) {
 			result = salario + (salario * 0.40);
 		}
 

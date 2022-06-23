@@ -1,18 +1,25 @@
 package model;
 
 public class Funcionario {
+	//atributos
 	private String nome;
 	private String cpf;
 	private String endereco;
 	private String data;
-	protected String titulacao;
+	private String titulacao;
 	private double salario;
 
-	public Funcionario(String nome, String cpf) {
+	//construtor
+	public Funcionario(String nome, String cpf, String endereco, String data, String titulacao, double salario) {
 		this.nome = nome;
 		this.cpf = cpf;
+		this.endereco = endereco;
+		this.data = data;
+		this.titulacao = titulacao;
+		this.salario = salario;
 	}
 
+	//setters
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -37,6 +44,7 @@ public class Funcionario {
 		this.salario = salario;
 	}
 
+	//getters
 	public String getNome() {
 		return this.nome;
 	}
