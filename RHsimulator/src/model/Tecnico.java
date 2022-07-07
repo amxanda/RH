@@ -6,7 +6,7 @@ public class Tecnico extends Funcionario {
 	public String departamento;
 
 	//construtor
-	public Tecnico(String nome, String cpf, String endereco, String data, String titulacao, double salario, int siape, String departamento ) {
+	public Tecnico(String nome, String cpf, String endereco, String data, String titulacao, double salario, int siape, String departamento) {
 		super(nome, cpf, endereco, data, titulacao, salario);
 		this.siape = siape;
 		this.departamento = departamento;
