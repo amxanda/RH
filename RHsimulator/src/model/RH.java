@@ -124,19 +124,18 @@ public class RH {
 		this.nome = leitor.nextLine();
 		System.out.print("CPF: ");
 		this.cpf = leitor.nextLine();
-		System.out.print("Endereço: ");
+		System.out.print("EndereÃ§o: ");
 		this.endereco = leitor.nextLine();
-		System.out.print("Data de admissão: ");
+		System.out.print("Data de admissÃ£o: ");
 		this.data = leitor.nextLine();
-		System.out.print("Titulação: ");
+		System.out.print("TitulaÃ§Ã£o: ");
 		this.titulacao = leitor.nextLine();
-		System.out.print("Salário Base: ");
+		System.out.print("SalÃ¡rio Base: ");
 		this.salario = leitor.nextDouble();
 		System.out.print("SIAPE: ");
 		this.siape = leitor.nextInt();
 		System.out.print("Area Vinculada: ");
 		this.area = leitor.nextLine();
-
 		System.out.println("");
 
 		Docente d = new Docente(this.nome, this.cpf, this.endereco, this.data, this.titulacao, this.salario, this.siape, this.area);
@@ -151,13 +150,13 @@ public class RH {
 		this.nome = leitor.nextLine();
 		System.out.print("CPF: ");
 		this.cpf = leitor.nextLine();
-		System.out.print("Endereço: ");
+		System.out.print("EndereÃ§o: ");
 		this.endereco = leitor.nextLine();
-		System.out.print("Data de admissão: ");
+		System.out.print("Data de admissÃ£o: ");
 		this.data = leitor.nextLine();
-		System.out.print("Titulação: ");
+		System.out.print("TitulaÃ§Ã£o: ");
 		this.titulacao = leitor.nextLine();
-		System.out.print("Salário Base: ");
+		System.out.print("SalÃ¡rio Base: ");
 		this.salario = leitor.nextDouble();
 		System.out.print("SIAPE: ");
 		this.siape = leitor.nextInt();
@@ -165,7 +164,6 @@ public class RH {
 		this.departamento = leitor.nextLine();
 
 		System.out.println("");
-		
 		Tecnico t = new Tecnico(this.nome, this.cpf, this.endereco, this.data, this.titulacao, this.salario, this.siape, this.departamento);
 		t.calculaSalario(salario);
 		
@@ -178,19 +176,18 @@ public class RH {
 		this.nome = leitor.nextLine();
 		System.out.print("CPF: ");
 		this.cpf = leitor.nextLine();
-		System.out.print("Endereço: ");
+		System.out.print("EndereÃ§o: ");
 		this.endereco = leitor.nextLine();
-		System.out.print("Data de admissão: ");
+		System.out.print("Data de admissÃ£o: ");
 		this.data = leitor.nextLine();
-		System.out.print("Titulação: ");
+		System.out.print("TitulaÃ§Ã£o: ");
 		this.titulacao = leitor.nextLine();
-		System.out.print("Salário Base: ");
+		System.out.print("SalÃ¡rio Base: ");
 		this.salario = leitor.nextDouble();
 		System.out.print("Data de fim de contrato: ");
 		this.dataFim = leitor.nextLine();
-		System.out.print("Função: ");
+		System.out.print("FunÃ§Ã£o: ");
 		this.funcao = leitor.nextLine();
-
 		System.out.println("");
 
 		Terceiro th = new Terceiro(this.nome, this.cpf, this.endereco, this.data, this.titulacao, this.salario, this.dataFim, this.funcao);
@@ -220,7 +217,7 @@ public class RH {
 	
 	//pesquisar por funcionarios
 	public ArrayList<Funcionario> Pesquisar(String nome) {
-		System.out.print("Digite o nome do funcionário a ser pesquisado: ");
+		System.out.print("Digite o nome do funcionÃ¡rio a ser pesquisado: ");
 		nome = leitor.nextLine();
 	
 		for (Funcionario f : cadastro) {
