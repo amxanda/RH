@@ -6,6 +6,7 @@ import model.Funcionario;
 import model.Docente;
 import model.Tecnico;
 import model.Terceiro;
+import model.RH;
 
 public class Main {
 	public static void main(String[] arg) {
