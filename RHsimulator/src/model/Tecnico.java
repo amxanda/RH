@@ -39,7 +39,6 @@ public class Tecnico extends Funcionario {
 		} else if (this.getTitulacao().equalsIgnoreCase("Doutor")) {
 			result = salario + (salario * 0.30);
 		}
-
 		return result;
 	}
 }
