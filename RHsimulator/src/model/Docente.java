@@ -39,7 +39,6 @@ public class Docente extends Funcionario {
 		} else if (this.getTitulacao().equalsIgnoreCase("Doutor")) {
 			result = salario + (salario * 0.40);
 		}
-
 		return result;
 	}
 }
