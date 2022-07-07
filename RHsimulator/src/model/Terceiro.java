@@ -6,7 +6,7 @@ public class Terceiro extends Funcionario {
 	private String funcao;
 
 	//construtor
-	public Terceiro(String nome, String cpf, String endereco, String data, String titulacao, double salario, String dataFim, String funcao ) {
+	public Terceiro(String nome, String cpf, String endereco, String data, String titulacao, double salario, String dataFim, String funcao) {
 		super(nome, cpf, endereco, data, titulacao, salario);
 		this.dataFim = dataFim;
 		this.funcao = funcao;
@@ -41,7 +41,6 @@ public class Terceiro extends Funcionario {
 				result = salario + 1000;
 			}
 		}
-
 		return result;
 	}
 }
