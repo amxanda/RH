@@ -2,6 +2,11 @@ package model;
 
 import java.util.*;
 
+import model.Funcionario;
+import model.Docente;
+import model.Tecnico;
+import model.Terceiro;
+
 public class RH {
 	//atributos
 	String nome;
@@ -139,7 +144,7 @@ public class RH {
 		System.out.println("");
 
 		Docente d = new Docente(this.nome, this.cpf, this.endereco, this.data, this.titulacao, this.salario, this.siape, this.area);
-		d.calculaSalario();
+		d.calculaSalario(salario);
 		
 		return d;
 	}
@@ -162,8 +167,8 @@ public class RH {
 		this.siape = leitor.nextInt();
 		System.out.print("Departamento: ");
 		this.departamento = leitor.nextLine();
-
 		System.out.println("");
+		
 		Tecnico t = new Tecnico(this.nome, this.cpf, this.endereco, this.data, this.titulacao, this.salario, this.siape, this.departamento);
 		t.calculaSalario(salario);
 		
@@ -195,41 +200,46 @@ public class RH {
 		
 		return th;
 	}
-
+	
+	//coletar cadastro
+	public void coletar(Funcionario f)
+	{
+		cadastro.add(f);
+	}
+	
 	//cadastro de funcionarios
-	public void Cadastrar(Funcionario f) {
+	public void cadastrar() {
 		
 		System.out.print("Digite o tipo de funcionario: ");
 		tipo = leitor.nextLine();
 		
 		if (tipo.equalsIgnoreCase("Docente")) {
-			cadastro.add(docente());
-			cadastro.add(f);
+			coletar(docente());
 		} else if (tipo.equalsIgnoreCase("Tecnico")) {
-			cadastro.add(tecnico());
-			cadastro.add(f);
+			coletar(tecnico());
 		} else if (tipo.equalsIgnoreCase("Terceiro")) {
-			cadastro.add(terceiro());
-			cadastro.add(f);
+			coletar(terceiro());
 		}
-		
 	}
 	
 	//pesquisar por funcionarios
-	public ArrayList<Funcionario> Pesquisar(String nome) {
+	public Funcionario pesquisar(String nome) {
 		System.out.print("Digite o nome do funcionário a ser pesquisado: ");
 		nome = leitor.nextLine();
 	
 		for (Funcionario f : cadastro) {
 			if(f.getNome().equalsIgnoreCase(nome)){
-				return cadastro;
+				return f;
+			}
+			else {
+				System.out.println("Cadastro não encontrado.");
 			}
 		}
-		return null;		
+		return null;
 	}
-
+	
 	//mostrar lista de funcionarios cadastrados
-	public ArrayList<Funcionario> Mostrar() {
+	public ArrayList<Funcionario> mostra() {
 		return cadastro;
-	}	
+	}
 }
