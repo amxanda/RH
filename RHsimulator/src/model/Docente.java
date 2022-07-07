@@ -6,7 +6,7 @@ public class Docente extends Funcionario {
 	private String areaVinculada;
 
 	//construtor
-	public Docente(String nome, String cpf, String endereco, String data, String titulacao, double salario, int siape, String areaVinculada ) {
+	public Docente(String nome, String cpf, String endereco, String data, String titulacao, double salario, int siape, String areaVinculada) {
 		super(nome, cpf, endereco, data, titulacao, salario);
 		this.siape = siape;
 		this.areaVinculada = areaVinculada;
