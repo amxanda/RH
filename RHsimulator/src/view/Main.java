@@ -6,7 +6,6 @@ import model.Funcionario;
 import model.Docente;
 import model.Tecnico;
 import model.Terceiro;
-import model.RH;
 
 public class Main {
 	public static void main(String[] arg) {
@@ -21,30 +20,30 @@ public class Main {
 		do {
 			System.out.println("");
 			System.out.println("--------- Menu ---------");
-			System.out.println("1 - Cadastro de funcionários.");
-			System.out.println("2 - Pesquisar funcionários.");
-			System.out.println("3 - Listar funcionários.");
+			System.out.println("1 - Cadastro de funcionÃ¡rios.");
+			System.out.println("2 - Pesquisar funcionÃ¡rios.");
+			System.out.println("3 - Listar funcionÃ¡rios.");
 			System.out.println("4 - Sair.");
 			System.out.println("");
 
-			System.out.print("Digite uma opção: ");
+			System.out.print("Digite uma opÃ§Ã£o: ");
 			opmenu = leitor.nextInt();
 
 			switch (opmenu) {
 			case 1: {
-				rh.Cadastrar(f1);
+				rh.cadastrar();
 				break;
 			}
-			case 2: {
-				rh.Pesquisar(nome);
+			case 2: {		
+				System.out.println(rh.pesquisar(nome)); 
 				break;
 			}
 			case 3: {
-				rh.Mostrar();
+				System.out.println(rh.mostra());
 				break;
 			}
 			default:
-				System.out.println("Opção Inválida, tente novamente.");
+				System.out.println("OpÃ§Ã£o InvÃ¡lida, tente novamente.");
 			}
 		} while (opmenu != 4);
 	}
